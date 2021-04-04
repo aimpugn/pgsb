@@ -1,0 +1,39 @@
+spring:
+  profiles:
+    active: dev
+  jackson:
+    deserialization:
+      UNWRAP_ROOT_VALUE: true
+  jpa: 
+    hibernate:
+      ddl-auto: update
+      database: postgresql
+      database-platform: org.hibernate.dialect.PostgreSQLDialect
+      generate-ddl: true
+image:
+  default: https://static.productionready.io/images/smiley-cyrus.jpg
+jwt:
+  secret: nRvyYC4soFxBdZ-F-5Nnzz5USXstR1YylsTd-mA0aKtI9HUlriGrtkf-TiuDapkLiUCogO3JOK7kwZisrHp6wA
+  sessionTime: 86400
+logging:
+  level:
+    root: DEBUG
+    org.springframework.web: trace
+    org.apache: trace
+
+# logging:levelio.spring.infrastructure.mybatis.readservice.ArticleReadService=DEBUG
+# logging.level.io.spring.infrastructure.mybatis.mapper=DEBUG
+# Uncomment the following line to enable and allow access to the h2-console
+#spring.h2.console.enabled=true
+
+---
+
+# profile 따른 properties 파일 설정 - https://galid1.tistory.com/664
+spring:
+  profiles: dev
+  datasource:
+    # dirver-class-name: org.postgresql.Driver URL로부터 추론
+    url: jdbc:postgresql://localhost:5432/aimpugn01
+    username: aimpugn
+    password: aimpugn
+  
